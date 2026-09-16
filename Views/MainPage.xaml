@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActividadMauiApp.Views.MainPage"
+             Title="Inicio - Actividad .NET MAUI"
+             BackgroundColor="#F8FAFC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="18">
+
+            <!-- Hero Banner -->
+            <Border StrokeThickness="0" StrokeShape="RoundRectangle 16" BackgroundColor="#4F46E5" Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="🚀 Actividad .NET MAUI" FontSize="24" FontAttributes="Bold" TextColor="White" />
+                    <Label Text="Desarrollo de Aplicaciones Móviles Multiplataforma con C#" FontSize="14" TextColor="#E0E7FF" />
+                    <Label Text="Usa el menú lateral o los botones directos para acceder a cada uno de los 5 ejercicios resueltos." FontSize="12" TextColor="#C7D2FE" Margin="0,6,0,0" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="Ejercicios de la Actividad" FontSize="18" FontAttributes="Bold" TextColor="#0F172A" Margin="0,10,0,0"/>
+
+            <!-- Ejercicio 1 Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 12" BackgroundColor="White" Padding="16">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="12" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="1. Suma de Dos Números" FontSize="16" FontAttributes="Bold" TextColor="#1E293B"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Variables, tipos de datos, operadores matemáticos y evento Clicked." FontSize="12" TextColor="#64748B"/>
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Abrir" Clicked="OnIrAEjercicio1Clicked" VerticalOptions="Center" BackgroundColor="#4F46E5" TextColor="White" HeightRequest="40" CornerRadius="8" Padding="14,0"/>
+                </Grid>
+            </Border>
+
+            <!-- Ejercicio 2 Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 12" BackgroundColor="White" Padding="16">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="12" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="2. Uso de RadioButtons" FontSize="16" FontAttributes="Bold" TextColor="#1E293B"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Selección de opciones exclusivas (operaciones) y evento CheckedChanged." FontSize="12" TextColor="#64748B"/>
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Abrir" Clicked="OnIrAEjercicio2Clicked" VerticalOptions="Center" BackgroundColor="#4F46E5" TextColor="White" HeightRequest="40" CornerRadius="8" Padding="14,0"/>
+                </Grid>
+            </Border>
+
+            <!-- Ejercicio 3 Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 12" BackgroundColor="White" Padding="16">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="12" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="3. Uso de CheckBox Multiplataforma" FontSize="16" FontAttributes="Bold" TextColor="#1E293B"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Casillas de selección múltiple, estados booleanos y cálculo acumulativo." FontSize="12" TextColor="#64748B"/>
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Abrir" Clicked="OnIrAEjercicio3Clicked" VerticalOptions="Center" BackgroundColor="#4F46E5" TextColor="White" HeightRequest="40" CornerRadius="8" Padding="14,0"/>
+                </Grid>
+            </Border>
+
+            <!-- Ejercicio 4 Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 12" BackgroundColor="White" Padding="16">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="12" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="4. Calculadora con Picker" FontSize="16" FontAttributes="Bold" TextColor="#1E293B"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Control desplegable Picker para operaciones aritméticas básicas." FontSize="12" TextColor="#64748B"/>
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Abrir" Clicked="OnIrAEjercicio4Clicked" VerticalOptions="Center" BackgroundColor="#4F46E5" TextColor="White" HeightRequest="40" CornerRadius="8" Padding="14,0"/>
+                </Grid>
+            </Border>
+
+            <!-- Ejercicio 5 Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 12" BackgroundColor="White" Padding="16">
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto" ColumnSpacing="12" RowSpacing="6">
+                    <Label Grid.Row="0" Grid.Column="0" Text="5. Lista de Frutas (ListView)" FontSize="16" FontAttributes="Bold" TextColor="#1E293B"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Colecciones dinámicas List&lt;T&gt;, captura y visualización en ListView." FontSize="12" TextColor="#64748B"/>
+                    <Button Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Text="Abrir" Clicked="OnIrAEjercicio5Clicked" VerticalOptions="Center" BackgroundColor="#4F46E5" TextColor="White" HeightRequest="40" CornerRadius="8" Padding="14,0"/>
+                </Grid>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

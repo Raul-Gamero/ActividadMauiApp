@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActividadMauiApp.Views.Ejercicio2Page"
+             Title="2. RadioButtons"
+             BackgroundColor="#F8FAFC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- Card Header -->
+            <Border StrokeThickness="0" StrokeShape="RoundRectangle 12" BackgroundColor="#4F46E5" Padding="16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Ejercicio 2: Control RadioButton" FontSize="18" FontAttributes="Bold" TextColor="White" />
+                    <Label Text="Selección de opciones mutuamente excluyentes con el evento CheckedChanged." FontSize="12" TextColor="#E0E7FF" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Card Inputs & RadioButtons -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- Numero 1 -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Primer Número:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                        <Border Stroke="#CBD5E1" StrokeThickness="1" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                            <Entry x:Name="txtNum1"
+                                   Placeholder="Ej: 20"
+                                   Keyboard="Numeric"
+                                   BackgroundColor="Transparent"
+                                   Margin="10,0"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Numero 2 -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Segundo Número:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                        <Border Stroke="#CBD5E1" StrokeThickness="1" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                            <Entry x:Name="txtNum2"
+                                   Placeholder="Ej: 4"
+                                   Keyboard="Numeric"
+                                   BackgroundColor="Transparent"
+                                   Margin="10,0"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- RadioButtons Group -->
+                    <Label Text="Selecciona la Operación:" FontAttributes="Bold" TextColor="#334155" FontSize="14" Margin="0,6,0,0" />
+
+                    <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 10" BackgroundColor="#F8FAFC" Padding="12">
+                        <VerticalStackLayout Spacing="10">
+                            <RadioButton x:Name="rbSuma"
+                                         Content="Suma (+)"
+                                         GroupName="Operaciones"
+                                         IsChecked="True"
+                                         TextColor="#1E293B"
+                                         CheckedChanged="OnOperacionCheckedChanged" />
+
+                            <RadioButton x:Name="rbResta"
+                                         Content="Resta (-)"
+                                         GroupName="Operaciones"
+                                         TextColor="#1E293B"
+                                         CheckedChanged="OnOperacionCheckedChanged" />
+
+                            <RadioButton x:Name="rbMultiplicacion"
+                                         Content="Multiplicación (×)"
+                                         GroupName="Operaciones"
+                                         TextColor="#1E293B"
+                                         CheckedChanged="OnOperacionCheckedChanged" />
+
+                            <RadioButton x:Name="rbDivision"
+                                         Content="División (÷)"
+                                         GroupName="Operaciones"
+                                         TextColor="#1E293B"
+                                         CheckedChanged="OnOperacionCheckedChanged" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Action Buttons -->
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="12" Margin="0,10,0,0">
+                        <Button Grid.Column="0"
+                                Text="⚙️ Calcular"
+                                Clicked="OnCalcularClicked"
+                                BackgroundColor="#4F46E5"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                HeightRequest="48" />
+
+                        <Button Grid.Column="1"
+                                Text="🗑️ Limpiar"
+                                Clicked="OnLimpiarClicked"
+                                BackgroundColor="#EF4444"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                HeightRequest="48" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Result Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label x:Name="lblOperacionSeleccionada" Text="Operación: Suma (+)" FontSize="14" TextColor="#64748B" HorizontalTextAlignment="Center" />
+                    <Label x:Name="lblResultado"
+                           Text="--"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#10B981"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

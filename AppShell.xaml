@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ActividadMauiApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:ActividadMauiApp.Views"
+    Title="Actividad NET MAUI"
+    FlyoutBehavior="Flyout">
+
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#4F46E5" HeightRequest="140" Padding="20">
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="Actividad .NET MAUI" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                <Label Text="Desarrollo de Aplicaciones Móviles" FontSize="13" TextColor="#E0E7FF" Margin="0,4,0,0"/>
+                <Label Text="Román Gallardo - Ejercicios Resueltos" FontSize="11" TextColor="#C7D2FE" Margin="0,2,0,0"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Shell Items / Flyout Navigation -->
+    <FlyoutItem Title="Inicio" Icon="dotnet_bot.png">
+        <ShellContent
+            Title="Inicio"
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="1. Suma de Números">
+        <ShellContent
+            Title="Suma de Dos Números"
+            ContentTemplate="{DataTemplate views:Ejercicio1Page}"
+            Route="Ejercicio1Page" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="2. RadioButtons">
+        <ShellContent
+            Title="Uso de RadioButtons"
+            ContentTemplate="{DataTemplate views:Ejercicio2Page}"
+            Route="Ejercicio2Page" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="3. CheckBox Multiplataforma">
+        <ShellContent
+            Title="Uso de CheckBox"
+            ContentTemplate="{DataTemplate views:Ejercicio3Page}"
+            Route="Ejercicio3Page" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="4. Calculadora con Picker">
+        <ShellContent
+            Title="Calculadora Picker"
+            ContentTemplate="{DataTemplate views:Ejercicio4Page}"
+            Route="Ejercicio4Page" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="5. Lista de Frutas (ListView)">
+        <ShellContent
+            Title="Lista y Colecciones"
+            ContentTemplate="{DataTemplate views:Ejercicio5Page}"
+            Route="Ejercicio5Page" />
+    </FlyoutItem>
+
+</Shell>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActividadMauiApp.Views.Ejercicio5Page"
+             Title="5. Lista de Frutas"
+             BackgroundColor="#F8FAFC">
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto" Padding="20" RowSpacing="16">
+
+        <!-- Card Header (Row 0) -->
+        <Border Grid.Row="0" StrokeThickness="0" StrokeShape="RoundRectangle 12" BackgroundColor="#4F46E5" Padding="16">
+            <VerticalStackLayout Spacing="4">
+                <Label Text="Ejercicio 5: ListView y Colecciones en C#" FontSize="18" FontAttributes="Bold" TextColor="White" />
+                <Label Text="Manejo dinámico de colecciones (List&lt;T&gt; / ObservableCollection&lt;T&gt;), altas y bajas." FontSize="12" TextColor="#E0E7FF" />
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Input & Actions Form (Row 1) -->
+        <Border Grid.Row="1" Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="16">
+            <VerticalStackLayout Spacing="12">
+                <Label Text="Nombre de la Fruta:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                
+                <Border Stroke="#CBD5E1" StrokeThickness="1" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                    <Entry x:Name="txtFruta"
+                           Placeholder="Ej: Manzana, Plátano, Fresa..."
+                           BackgroundColor="Transparent"
+                           Margin="10,0"
+                           Completed="OnAgregarFrutaClicked"/>
+                </Border>
+
+                <!-- Grid Buttons -->
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="10" Margin="0,4,0,0">
+                    <Button Grid.Column="0"
+                            Text="➕ Agregar Fruta"
+                            Clicked="OnAgregarFrutaClicked"
+                            BackgroundColor="#10B981"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="44" />
+
+                    <Button Grid.Column="1"
+                            Text="❌ Eliminar"
+                            Clicked="OnEliminarSeleccionadaClicked"
+                            BackgroundColor="#EF4444"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="44" />
+                </Grid>
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- ListView Container (Row 2) -->
+        <Border Grid.Row="2" Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="12">
+            <Grid RowDefinitions="Auto, *">
+                <Grid Grid.Row="0" ColumnDefinitions="*, Auto" Margin="4,0,4,8">
+                    <Label Text="Frutas en la Colección:" FontAttributes="Bold" TextColor="#1E293B" FontSize="15" VerticalOptions="Center"/>
+                    <Label x:Name="lblContador" Grid.Column="1" Text="Total: 0 frutas" FontSize="12" TextColor="#64748B" VerticalOptions="Center"/>
+                </Grid>
+
+                <ListView x:Name="lstFrutas"
+                          Grid.Row="1"
+                          SeparatorColor="#E2E8F0"
+                          HasUnevenRows="False"
+                          RowHeight="50"
+                          ItemSelected="OnFrutaItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding .}"
+                                      TextColor="#1E293B"
+                                      Detail="Elemento en colección"
+                                      DetailColor="#94A3B8"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Border>
+
+        <!-- Footer Actions (Row 3) -->
+        <Button Grid.Row="3"
+                Text="🗑️ Vaciar Toda la Lista"
+                Clicked="OnVaciarListaClicked"
+                BackgroundColor="#64748B"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HeightRequest="44" />
+
+    </Grid>
+</ContentPage>

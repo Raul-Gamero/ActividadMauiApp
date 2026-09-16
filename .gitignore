@@ -1,0 +1,29 @@
+## Visual Studio and .NET MAUI gitignore
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+arm/
+arm64/
+publish/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Mono / Mobile
+*.pidb
+*.booproj
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

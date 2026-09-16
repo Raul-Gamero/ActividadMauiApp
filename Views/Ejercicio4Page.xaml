@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ActividadMauiApp.Views.Ejercicio4Page"
+             Title="4. Calculadora Picker"
+             BackgroundColor="#F8FAFC">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- Card Header -->
+            <Border StrokeThickness="0" StrokeShape="RoundRectangle 12" BackgroundColor="#4F46E5" Padding="16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Ejercicio 4: Calculadora con Picker" FontSize="18" FontAttributes="Bold" TextColor="White" />
+                    <Label Text="Uso del control de selección desplegable (Picker) para operaciones aritméticas." FontSize="12" TextColor="#E0E7FF" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Card Calculator -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- Primer Numero -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Primer Operando:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                        <Border Stroke="#CBD5E1" StrokeThickness="1" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                            <Entry x:Name="txtOperando1"
+                                   Placeholder="Ej: 50"
+                                   Keyboard="Numeric"
+                                   BackgroundColor="Transparent"
+                                   Margin="10,0"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Selector Picker -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Selecciona la Operación en el Picker:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                        <Border Stroke="#4F46E5" StrokeThickness="1.5" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                            <Picker x:Name="pickerOperacion"
+                                    Title="-- Elige una operación --"
+                                    TextColor="#1E293B"
+                                    TitleColor="#64748B"
+                                    Margin="10,0"
+                                    SelectedIndexChanged="OnPickerOperacionChanged">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Suma (+)</x:String>
+                                        <x:String>Resta (-)</x:String>
+                                        <x:String>Multiplicación (×)</x:String>
+                                        <x:String>División (÷)</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Segundo Numero -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Segundo Operando:" FontAttributes="Bold" TextColor="#334155" FontSize="14" />
+                        <Border Stroke="#CBD5E1" StrokeThickness="1" StrokeShape="RoundRectangle 8" BackgroundColor="#F8FAFC">
+                            <Entry x:Name="txtOperando2"
+                                   Placeholder="Ej: 5"
+                                   Keyboard="Numeric"
+                                   BackgroundColor="Transparent"
+                                   Margin="10,0"/>
+                        </Border>
+                    </VerticalStackLayout>
+
+                    <!-- Action Buttons -->
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="12" Margin="0,10,0,0">
+                        <Button Grid.Column="0"
+                                Text="🧮 Calcular"
+                                Clicked="OnCalcularOperacionClicked"
+                                BackgroundColor="#4F46E5"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                HeightRequest="48" />
+
+                        <Button Grid.Column="1"
+                                Text="🗑️ Limpiar"
+                                Clicked="OnLimpiarClicked"
+                                BackgroundColor="#EF4444"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                HeightRequest="48" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Result Card -->
+            <Border Stroke="#E2E8F0" StrokeThickness="1" StrokeShape="RoundRectangle 16" BackgroundColor="White" Padding="20">
+                <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Label x:Name="lblOperacionInfo" Text="Operación: No seleccionada" FontSize="14" TextColor="#64748B" HorizontalTextAlignment="Center" />
+                    <Label x:Name="lblResultado"
+                           Text="--"
+                           FontSize="28"
+                           FontAttributes="Bold"
+                           TextColor="#10B981"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

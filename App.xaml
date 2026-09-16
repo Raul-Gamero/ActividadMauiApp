@@ -1,0 +1,43 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ActividadMauiApp"
+             x:Class="ActividadMauiApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Primary Brand Colors -->
+            <Color x:Key="Primary">#4F46E5</Color>
+            <Color x:Key="PrimaryDark">#3730A3</Color>
+            <Color x:Key="Secondary">#06B6D4</Color>
+            <Color x:Key="BackgroundLight">#F8FAFC</Color>
+            <Color x:Key="CardBackground">#FFFFFF</Color>
+            <Color x:Key="TextPrimary">#0F172A</Color>
+            <Color x:Key="TextSecondary">#64748B</Color>
+            <Color x:Key="BorderLight">#E2E8F0</Color>
+            <Color x:Key="Success">#10B981</Color>
+            <Color x:Key="Danger">#EF4444</Color>
+
+            <!-- Base Styles -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="14,10" />
+                <Setter Property="HeightRequest" Value="48" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource TextSecondary}" />
+                <Setter Property="BackgroundColor" Value="#F1F5F9" />
+                <Setter Property="HeightRequest" Value="46" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
